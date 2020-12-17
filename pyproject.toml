@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "noglobal-magic"
-version = "0.1.0"
+version = "0.1.1"
 description = "magic command for prohibit using global variables in Jupyter Notebook"
 authors = ["tokusumi <tksmtoms@gmail.com>"]
 license = "MIT"
