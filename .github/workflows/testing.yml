@@ -1,0 +1,28 @@
+name: Tests
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  pytest:
+    name: pytest
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+        ipython-version: [5.5.0, 7.12.0]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - uses: Gr1N/setup-poetry@v4
+      with:
+        poetry-version: 1.0.0
+    - run: poetry add ipython==${{ matrix.ipython-version }}
+    - run: poetry install
+    - run: poetry run bash scripts/test.sh
