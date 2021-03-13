@@ -1,5 +1,8 @@
 # noglobal-magic
 
+[![Tests](https://github.com/tokusumi/noglobal-magic/actions/workflows/testing.yml/badge.svg)](https://github.com/tokusumi/noglobal-magic/actions/workflows/testing.yml)
+[![PyPI version](https://badge.fury.io/py/noglobal-magic.svg)](https://badge.fury.io/py/noglobal-magic)
+
 For Jupyter Notebook user's, [noglobal-magic](https://github.com/tokusumi/noglobal-magic) find global variables in a local scope.
 
 With:
