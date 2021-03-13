@@ -5,8 +5,7 @@ def test_no_global(ip, capsys):
     ip.run_cell("%no_global", store_history=True)
     res = ip.run_cell("""a = 1""", store_history=True)
     res = ip.run_cell(
-        """
-aaa = 1
+        """aaa = 1
 bbb = 2
 
 def hoge(b, d=3):
@@ -30,8 +29,7 @@ In [3] 5: global variable 'a' In 'hoge'"""
 
     ip.magic("no_global_off")
     res = ip.run_cell(
-        """
-aaa = 1
+        """aaa = 1
 bbb = 2
 
 def hoge(b, d=3):
@@ -55,8 +53,7 @@ def test_warn_global(ip, capsys):
     ip.run_cell("%warn_global", store_history=True)
     res = ip.run_cell("""a = 1""", store_history=True)
     res = ip.run_cell(
-        """
-aaa = 1
+        """aaa = 1
 bbb = 2
 
 def hoge(b, d=3):
@@ -80,8 +77,7 @@ In [3] 5: global variable 'a' In 'hoge'"""
 
     ip.magic("warn_global_off")
     res = ip.run_cell(
-        """
-aaa = 1
+        """aaa = 1
 bbb = 2
 
 def hoge(b, d=3):
@@ -157,8 +153,7 @@ def test_indicator(ip, capsys):
     """
     ip.run_cell("%warn_global", store_history=True)
     ip.run_cell(
-        """
-bbb = 2
+        """bbb = 2
 
 def using_global():
     a = 1 + bbb
@@ -174,8 +169,7 @@ In [2] 4: global variable 'bbb' In 'using_global'"""
     )
 
     res = ip.run_cell(
-        """
-def using_dependency_using_global_var():
+        """def using_dependency_using_global_var():
     return using_global()
 """,
         store_history=True,
